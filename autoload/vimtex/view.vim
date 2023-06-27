@@ -43,6 +43,9 @@ endfunction
 function! vimtex#view#view(...) abort " {{{1
   if exists('*b:vimtex.viewer.view')
     call b:vimtex.viewer.view(a:0 > 0 ? a:1 : '')
+    if exists('g:loaded_evinceSync')
+      call SVED_Sync()
+    endif
   endif
 endfunction
 
